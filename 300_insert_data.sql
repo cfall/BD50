@@ -79,11 +79,37 @@ insert into evenement
 		 ,0
 		 ,1
 		 ,1);
+		 
+		 
+insert into evenement
+		( num_evenement
+		 ,num_periodicite
+		 ,num_agenda
+		 ,num_participant
+		 ,libelle_evenement
+		 ,date_deb_evenement
+		 ,date_fin_evenement
+		 ,type_evenement
+		 ,repetitif
+		 ,prive
+		 ,etat_evenement
+		 ) 
+	values 
+		( seq_evenement.nextval
+		 ,1
+		 ,1
+		 ,1
+		 ,'Crunch Time'
+		 ,'22/05/2018'
+		 ,'25/05/2018'
+		 ,'Cours'
+		 ,0
+		 ,1
+		 ,1);
 
 -- Table occurrence		 
 insert into occurrence
 		( num_evenement
-		 ,num_occurrence
 		 ,date_occurrence
 		 ,num_rue_occurrence
 		 ,nom_rue_occurrence
@@ -97,7 +123,6 @@ insert into occurrence
 		 ) 
 	values 
 		( 2
-		 ,seq_occurrence.nextval
 		 ,'13/03/2018'
 		 ,12
 		 ,'Thierry Mieg'
@@ -107,4 +132,30 @@ insert into occurrence
 		 ,'FRANCE'
 		 ,to_date('13/03/2018 08:00', 'dd/mm/yyyy hh:mi')
 		 ,to_date('13/03/2018 10:00', 'dd/mm/yyyy hh:mi')
+		 ,1);
+
+insert into occurrence
+		( num_evenement
+		 ,date_occurrence
+		 ,num_rue_occurrence
+		 ,nom_rue_occurrence
+		 ,comp_adr_occurrence
+		 ,commune_occurrence
+		 ,cp_occurrence
+		 ,pays_occurrence
+		 ,heure_deb_occurrence
+		 ,heure_fin_occurrence
+		 ,etat_occurrence
+		 ) 
+	values 
+		( 21
+		 ,'22/05/2018'
+		 ,6
+		 ,'Rue du Commandant Pierre Rossel'
+		 ,null
+		 ,'MONTBELIARD'
+		 ,25000
+		 ,'FRANCE'
+		 ,to_date('22/05/2018 08:00', 'dd/mm/yyyy hh:mi')
+		 ,to_date('22/05/2018 05:00', 'dd/mm/yyyy hh:mi')
 		 ,1);		 
